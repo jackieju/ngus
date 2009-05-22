@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4"
+	xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>myWeb</display-name>
+	<context-param>
+        <param-name>ngus.core.memCached.server</param-name>
+        <param-value>;memcached1:11211;memcached2:11211;</param-value>
+    </context-param>
+    <context-param>
+        <param-name>mail.smtp.host</param-name>
+        <param-value>umserver</param-value>
+    </context-param>
+    <context-param>
+        <param-name>ngus.um.port</param-name>
+        <param-value>17291</param-value>
+    </context-param>
+    <context-param>
+        <param-name>ngus.log.file</param-name>
+        <param-value>ngus_fileServer.log</param-value>
+    </context-param>
+     <context-param>
+        <param-name>mail.smtp.port</param-name>
+        <param-value>25</param-value>
+    </context-param>
+    <context-param>
+        <param-name>mail.smtp.username</param-name>
+        <param-value></param-value>
+    </context-param>
+    <context-param>
+        <param-name>mail.smtp.password</param-name>
+        <param-value></param-value>
+    </context-param>
+	<context-param>
+		<param-name>ngus.initialization.file</param-name>
+		<param-value>
+			WEB-INF/config/${servername}/${webapp}/ngus.properties,
+			WEB-INF/config/${servername}/ngus.properties,
+			WEB-INF/config/${webapp}/ngus.properties,
+			WEB-INF/config/default/ngus.properties,
+			WEB-INF/config/ngus.properties
+		</param-value>
+	</context-param>
+	<listener>
+		<description>NGUS Initializer</description>
+		<display-name>Initializer</display-name>
+		<listener-class>com.ngus.servlet.Initializer</listener-class>
+	</listener>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<resource-ref>
+		<description>DB Connection</description>
+		<res-ref-name>jdbc/ngus</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+	<resource-env-ref>
+		<description>Content Repository</description>
+		<resource-env-ref-name>jcr/repository</resource-env-ref-name>
+		<resource-env-ref-type>
+			javax.jcr.Repository
+		</resource-env-ref-type>
+	</resource-env-ref>
+</web-app>

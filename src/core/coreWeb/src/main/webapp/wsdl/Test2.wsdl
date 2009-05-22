@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservice.core.ngus.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://webservice.core.ngus.com" xmlns:intf="http://webservice.core.ngus.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" name="">
+<!-- WSDL created by Apache Axis version: 1.2.1
+Built on Jun 14, 2005 (09:15:57 EDT)-->
+ <wsdl:types>
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema"  targetNamespace="http://webservice.core.ngus.com" >
+  <!-- <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/> -->
+   <xsd:complexType name="ComplexObject">
+    <xsd:all>
+     <xsd:element name="a" type="xsd:int"/>
+     <xsd:element name="b" type="xsd:string"/>
+    </xsd:all>
+   </xsd:complexType>
+   <xsd:complexType name="Book">
+    <xsd:all>
+     <xsd:element name="a" type="xsd:int"/>
+     <xsd:element name="b" type="xsd:string"/>
+    </xsd:all>
+   </xsd:complexType>
+  </xsd:schema>
+ </wsdl:types>
+
+   <message name="test_rcp_comResponse">
+
+      <part name="test_rcp_comReturn" type="impl:ComplexObject"/>
+
+   </message>
+
+   <message name="test_rcp_comRequest">
+
+      <part name="p" type="xsd:int"/>
+
+   </message>
+
+   <message name="CCResponse">
+
+      <part name="CCReturn" type="impl:Book"/>
+
+   </message>
+
+   <message name="CCRequest">
+
+   </message>
+
+   <message name="test2Response">
+
+      <part name="test2Return" type="impl:ComplexObject"/>
+
+   </message>
+
+   <message name="test2Request">
+
+      <part name="p" type="xsd:int"/>
+
+   </message>
+
+   <message name="AAResponse">
+
+      <part name="AAReturn" type="impl:ComplexObject"/>
+
+   </message>
+
+   <message name="BBResponse">
+
+      <part name="BBReturn" type="xsd:int"/>
+
+   </message>
+
+   <message name="BBRequest">
+
+   </message>
+
+   <message name="testResponse">
+
+      <part name="testReturn" type="impl:ComplexObject"/>
+
+   </message>
+
+   <message name="testRequest">
+
+   </message>
+
+   <message name="AARequest">
+
+   </message>
+
+   <portType name="Test2">
+
+      <operation name="test2" parameterOrder="p">
+
+         <input message="impl:test2Request" name="test2Request"/>
+
+         <output message="impl:test2Response" name="test2Response"/>
+
+      </operation>
+
+      <operation name="test_rcp_com" parameterOrder="p">
+
+         <input message="impl:test_rcp_comRequest" name="test_rcp_comRequest"/>
+
+         <output message="impl:test_rcp_comResponse" name="test_rcp_comResponse"/>
+
+      </operation>
+
+      <operation name="AA">
+
+         <input message="impl:AARequest" name="AARequest"/>
+
+         <output message="impl:AAResponse" name="AAResponse"/>
+
+      </operation>
+
+      <operation name="test">
+
+         <input message="impl:testRequest" name="testRequest"/>
+
+         <output message="impl:testResponse" name="testResponse"/>
+
+      </operation>
+
+      <operation name="BB">
+
+         <input message="impl:BBRequest" name="BBRequest"/>
+
+         <output message="impl:BBResponse" name="BBResponse"/>
+
+      </operation>
+
+      <operation name="CC">
+
+         <input message="impl:CCRequest"/>
+
+         <output message="impl:CCResponse"/>
+
+      </operation>
+
+   </portType>
+
+   <binding name="Test2SoapBinding" type="impl:Test2">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <operation name="test2">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <input name="test2Request">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.core.ngus.com" use="encoded"/>
+
+         </input>
+
+         <output name="test2Response">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.core.ngus.com" use="encoded"/>
+
+         </output>
+
+      </operation>
+
+      <operation name="test_rcp_com">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <input name="test_rcp_comRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.core.ngus.com" use="encoded"/>
+
+         </input>
+
+         <output name="test_rcp_comResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.core.ngus.com" use="encoded"/>
+
+         </output>
+
+      </operation>
+
+      <operation name="AA">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <input name="AARequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.core.ngus.com" use="encoded"/>
+
+         </input>
+
+         <output name="AAResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.core.ngus.com" use="encoded"/>
+
+         </output>
+
+      </operation>
+
+      <operation name="test">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <input name="testRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.core.ngus.com" use="encoded"/>
+
+         </input>
+
+         <output name="testResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.core.ngus.com" use="encoded"/>
+
+         </output>
+
+      </operation>
+
+      <operation name="BB">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <input name="BBRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.core.ngus.com" use="encoded"/>
+
+         </input>
+
+         <output name="BBResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.core.ngus.com" use="encoded"/>
+
+         </output>
+
+      </operation>
+
+      <operation name="CC">
+
+         <wsdlsoap:operation soapAction="http://webservice.core.ngus.com"/>
+
+         <input name="CCRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.core.ngus.com" use="encoded"/>
+
+         </input>
+
+         <output name="CCResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.core.ngus.com" use="encoded"/>
+
+         </output>
+
+      </operation>
+
+   </binding>
+
+   <service name="Test2Service">
+
+      <port name="Test2" binding="impl:Test2SoapBinding" >
+
+         <wsdlsoap:address location="http://localhost:8080/coreWeb/services/Test2"/>
+
+      </port>
+
+   </service>
+
+</wsdl:definitions>

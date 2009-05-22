@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link media="all" rel="stylesheet" type="text/css" href="webos/css/theme/tiger/element.css" />
+		<link media="all" rel="stylesheet" type="text/css" href="webos/css/theme/tiger/sign.css" />
+		<script type="text/javascript" src="webos/javascript/sign.js"></script>
+		<title>Monweb Desktop</title>
+	</head>
+	<body>
+		<div class="webos-canvas" id="webosCanvas">
+			<div class="webos-sign" id="webosSign">
+				<table class="webos-sign-shadow">
+					<tr>
+						<td class="webos-sign-shadow-nw">&nbsp;
+						</td>
+						<td class="webos-sign-shadow-n">&nbsp;
+						</td>
+						<td class="webos-sign-shadow-ne">&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td class="webos-sign-shadow-w">&nbsp;
+						</td>
+						<td class="webos-sign-shadow-center">
+							<div class="webos-sign-inner">
+								<div class="webos-sign-title">
+								</div>
+								<div class="webos-sign-body">
+									<table class="webos-sign-body-signin" id="webosSigninContent">
+										<tr>
+											<td class="webos-sign-body-signin-title">
+												<div></div>
+												<div>用户名<div>
+												<div>密码<div>
+												<div>验证码<div>
+											</td>
+											<td class="webos-sign-body-signin-data">
+												<form method="post" action="desktop.html" id="webosSigninForm" name="login">
+													<div>
+														<input type="text" id="webosSigninUsername" title="Username" name="userName" maxlength="10" />
+													</div>
+													<div>
+														<input type="password" id="webosSigninPassword" title="Password" name="password" maxlength="20" />
+													</div>
+													<div>
+														<input type="text" id="webosSigninSecurityCode" title="Security code" name="validCode" maxlength="4" />
+													</div>
+													<span class="red" id="webosSigninMessage">请填写完整信息</span>
+
+												</form>
+											</td>
+											<td class="webos-sign-body-signin-action">
+                                                <div>
+												<div class="webos-sign-body-signin-action-signin">
+													<a href="#" id="webosSigninActionLoad" title="Sign in">&nbsp;</a>
+												</div>
+                                                <div class="webos-sign-body-signin-action-submit">
+                                                    <a href="#" id="webosSigninActionSubmit" title="登录">登录</a>
+                                                </div>
+                                                <div style="font-size:0px;line-height:0px;clear:both;"></div>
+                                                </div>
+												<div class="webos-sign-body-signin-action-help">
+													<a href="/webos_demo.html" id="webosSigninForget">试用</a> | <a href="#" id="webosSigninActionSignup">注册</a>
+												</div>
+													<div id="webosSigninSecurityCodeContent" class="webos-sign-body-signin-data-securitycode" style="margin-top:40px; visibility:hidden;">
+														<img alt="Security code" id="webosSigninSecurityCodeImg" />
+													</div>
+											</td>
+										</tr>
+									</table>
+									<table class="webos-sign-body-signup" id="webosSignupContent">
+										<tr>
+											<td class="webos-sign-body-signup-title">
+												<div>用户名<div>
+												<div>密码<div>
+												<div>再次输入密码<div>
+												<div>邮箱<div>
+												<div>验证码<div>
+											</td>
+											<td class="webos-sign-body-signup-data">
+												<form method="post" action="desktop.html" id="webosSignupForm">
+													<div>
+														<input type="text" id="webosSignupUsername" title="Username" name="userName" maxlength="10" />
+													</div>
+													<div>
+														<input type="password" id="webosSignupPassword" title="Password" name="password" maxlength="20" />
+													</div>
+													<div>
+														<input type="password" id="webosSignupConfirm" title="Confirm" name="confirmPassword" maxlength="20" />
+													</div>
+													<div>
+														<input type="text" id="webosSignupEmail" title="Email" name="email" />
+													</div>
+													<div>
+														<input type="text" id="webosSignupSecurityCode" title="Security code" name="validCode" maxlength="4" />
+													</div>
+													<span class="red" id="webosSignupMessage">请填写完整信息</span>
+													<div id="webosSignupSecurityCodeContent" class="webos-sign-body-signup-data-securitycode">
+														<img alt="Security code" id="webosSignupSecurityCodeImg" />
+													</div>
+												</form>
+											</td>
+											<td class="webos-sign-body-signup-action">
+                                                <div>
+												<div class="webos-sign-body-signup-action-signin">
+													<a href="#" id="webosSignupActionLoad" title="提交"></a>
+												</div>
+                                                <div class="webos-sign-body-signup-action-submit">
+                                                    <a href="#" id="webosSignupActionSubmit" title="提交">提交</a>
+                                                </div>
+                                                <div style="font-size:0px;line-height:0px;clear:both;"></div>
+                                                </div>
+												<div class="webos-sign-body-signup-action-help">
+													<a href="/webos_demo.html" id="webosSignupForget">试用</a> | <a href="#" id="webosSignupActionSignin">登录</a>
+												</div>
+											</td>
+										</tr>
+									</table>
+								</div>
+								<div class="webos-sign-bottom">
+									<a href="#" id="webosSignShutdown" title="Shut down">&nbsp;</a>
+									<span>关闭窗口</span>
+								</div>
+							</div>
+						</td>
+						<td class="webos-sign-shadow-e">&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td class="webos-sign-shadow-sw">&nbsp;
+						</td>
+						<td class="webos-sign-shadow-s">&nbsp;
+						</td>
+						<td class="webos-sign-shadow-se">&nbsp;
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div id="webosSigninCache" class="webos-sign-cache"><iframe id="webosCache"></iframe></div>
+		</div>
+		<div style="display:none;">
+<script type="text/javascript">
+     var wdConfig=new Array();
+     wdConfig['c_id'] =309;
+     wdConfig['show'] = 'text'; 
+</script>
+<script type="text/javascript" src="http://static.wudi88.com/c.js"></script> 		
+		<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-3778166-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+		</div>
+	</body>
+</html>

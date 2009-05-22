@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<indexes>
+  <index name="myweb_res" mappedName="$$" syncUpdate="true">
+    	<field name="resId" mappedName="$resId" type="string"/>
+    	<field name="url" mappedName="$value" type="string"/>
+     	<field name="userid" mappedName="$userId" type="string"/>
+     	<field name="name" mappedName="$title" type="string"/>	  
+     	<field name="createTime" mappedName="$createTime" type="time"/>   	
+     	<field name="sharelevel" mappedName="$shareLevel" type="number"/> 
+    </index>
+     <index name="myweb_url" mappedName="myweb" syncUpdate="true">
+    	<field name="resid" mappedName="$resId" type="string"/>
+    	<field name="url" mappedName="$value" type="string"/>	   	
+    	<field name="title" mappedName="" type="string"/>
+    </index>
+ <!--
+    <index name="myWeb_name" mappedName="myweb" syncUpdate="true">
+    	<field name="resId" mappedName="$resId" type="string"/>
+    	<field name="name" mappedName="$title" type="string"/>	   	
+    </index>
+
+    <index name="myWeb_tag" mappedName="myweb" syncUpdate="true">
+    	<field name="resId" mappedName="$resId" type="string"/>
+    	<field name="tag" mappedName="tag" type="string"></field>    	
+    	<field name="userid" mappedName="$userId" type="string"/>
+    </index>
+
+    <index name="myWeb_addtime" mappedName="myweb" syncUpdate="true">
+    	<field name="resId" mappedName="$resId" type="string"/>
+    	<field name="userid" mappedName="$userId" type="number"/>
+    	<field name="createTime" mappedName="$createTime" type="time"/>  
+    </index>  
+    -->  
+</indexes>

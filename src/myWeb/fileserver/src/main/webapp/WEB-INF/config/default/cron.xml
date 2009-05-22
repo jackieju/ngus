@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<crons>
+  <cron name="ResTypeDaemon" class="com.ngus.myweb.spider.ResTypeDaemon" interval="1000" threadNumber="2" />
+  <cron name="PageDaemon" class="com.ngus.myweb.spider.PageDaemon" interval="1000" threadNumber="2" />
+  <cron name="ThumbnailDaemon" class="com.ngus.myweb.spider.ThumbnailDaemon" interval="1000" threadNumber="2" >
+  	<param name="width" value="300"/>
+  	<param name="height" value="300"/>
+  </cron>
+  
+  <cron name="pageSnapshotDaemon" class="com.ngus.myweb.daemon.WebPageDaemon" interval="1000" threadNumber="1" >
+  	<param name="width" value="100"/>
+  	<param name="height" value="100"/>
+  	<param name="root" value="fsroot/pagess"/>
+  	<param name="display" value="ts-test-03:1"/>
+  	<param name="command" value="html2pic.sh"/>
+  	<param name="workingDir" value="/root"/>
+  </cron>
+    <cron name="videoSnapshotDaemon" class="com.ngus.myweb.daemon.VedioDaemon" interval="1000" threadNumber="1" >
+  	<param name="width" value="100"/>
+  	<param name="height" value="100"/>
+  	<param name="root" value="fsroot/pagess"/>
+  	<param name="display" value="ts-test-03:1"/>
+  	<param name="command" value="html2pic.sh"/>
+  	<param name="workingDir" value="/root"/>
+  </cron>
+</crons>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<indexes>
+    <!-- $$ mean needs to be updated when resource change  and be inserted when new resource created-->
+   <index name="myweb_res" mappedName="$$" syncUpdate="true">
+    	<field name="resId" mappedName="$resId" type="string"/>
+    	<field name="url" mappedName="$value" type="string"/>
+     	<field name="userid" mappedName="$userId" type="string"/>
+     	<field name="name" mappedName="$title" type="string"/>	  
+     	<field name="createTime" mappedName="$createTime" type="time"/>   	
+    </index>
+    <!-- $update mean needs to be updated and deleted when resource change -->
+    <index name="myWeb_addTime" mappedName="$update, myweb,clipboard" syncUpdate="true">
+    	<field name="resId" mappedName="$resId" type="string"/>
+    	<field name="userId" mappedName="$userId" type="number"/>   	
+    	<field name="createTime" mappedName="$createTime" type="time"/>    	
+    </index>
+    <index name="myWeb_subject" mappedName="$update, clipboard,myweb" syncUpdate="false">
+    	<field name="resId" mappedName="$resId" type="string"/>
+    	<field name="toto" mappedName="$title" type="string"/>    	
+    	<field name="subject" mappedName="subject" type="string"/>    	
+    </index>
+     <index name="myWeb_subjects" mappedName="clipboard, myweb" syncUpdate="false">    	
+    	<field name="subject" mappedName="subject" type="string"/>    	
+    </index>
+    <!-- 
+    <index name="myWeb_tag" mappedName="myweb" syncUpdate="false">
+    	<field name="resId" mappedName="$resId" type="string"/>
+    	<field name="tag" mappedName="tag" type="string"/>   
+    	<field name="userId" mappedName="$userId" type="string"/>   	
+    </index>
+   
+    <index name="myWeb_test" mappedName="clipboard" syncUpdate="false">
+    	<field name="resId" mappedName="$resId" type="string"/>
+    	<field name="subject" mappedName="Subject" type="string"/>    	
+    </index>
+    <index name="myWeb_test2" mappedName="clipboard" sycUpdate="false">
+        	<field name="resId" mappedName="$resId" type="string"/>
+    		<field name="value" mappedName="$value" type="string"/>    
+    </index>
+    <index name="myWeb_userid" mappedName="clipboard" sycUpdate="false">
+        	<field name="resId" mappedName="$resId" type="string"/>
+    		<field name="value" mappedName="$userId" type="string"/>    
+    </index>
+    
+    <index name="myWeb_url" mappedName="myweb" syncUpdate="true">
+    	<field name="resId" mappedName="$resId" type="string"/>
+    	<field name="url" mappedName="$value" type="string"/>
+     	<field name="userid" mappedName="$userId" type="string"/>
+    </index>
+    <index name="myWeb_name" mappedName="myweb" syncUpdate="true">
+    	<field name="resId" mappedName="$resId" type="string"/>
+    	<field name="name" mappedName="name" type="string"/>	   	
+    </index>
+ -->
+ 
+</indexes>

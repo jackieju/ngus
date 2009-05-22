@@ -1,0 +1,14 @@
+
+	/**
+	 * @return
+	 */
+	public DataObjectList get<<child>>() {
+		return this.getNode().getChildren(<<child>>.getOBJECT_NAME());
+	}
+	
+	/**
+	 * @return
+	 */
+	public void add<<child>>(<<child>> child) {
+		return this.getNode().addChild(child.getNode());
+	}

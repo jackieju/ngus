@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://webservice.core.ngus.com" xmlns:intf="http://webservice.core.ngus.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://webservice.core.ngus.com">
+<!--WSDL created by Apache Axis version: 1.2.1
+Built on Jun 14, 2005 (09:15:57 EDT)-->
+ <wsdl:types>
+  <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://webservice.core.ngus.com">
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="Book">
+    <sequence>
+     <element name="a" type="xsd:int"/>
+     <element name="b" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="CCResponse">
+
+      <wsdl:part name="CCReturn" type="impl:Book"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="CCRequest">
+
+   </wsdl:message>
+
+   <wsdl:message name="testResponse">
+
+      <wsdl:part name="testReturn" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="testRequest">
+
+      <wsdl:part name="p" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Test">
+
+      <wsdl:operation name="test" parameterOrder="p">
+
+         <wsdl:input message="impl:testRequest" name="testRequest"/>
+
+         <wsdl:output message="impl:testResponse" name="testResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="CC">
+
+         <wsdl:input message="impl:CCRequest" name="CCRequest"/>
+
+         <wsdl:output message="impl:CCResponse" name="CCResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="TestSoapBinding" type="impl:Test">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="test">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="testRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.core.ngus.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="testResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.core.ngus.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="CC">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="CCRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.core.ngus.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="CCResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.core.ngus.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="TestService">
+
+      <wsdl:port binding="impl:TestSoapBinding" name="Test">
+
+         <wsdlsoap:address location="http://localhost:8080/coreWeb/services/Test"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

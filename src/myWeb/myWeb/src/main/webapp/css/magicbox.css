@@ -1,0 +1,109 @@
+﻿/*********************************************************
+* magicbox
+*********************************************************/
+.magicbox
+{
+    display : none;    
+    margin : auto;
+    background-color : Black;
+}
+
+.magicbox img
+{
+    border : none;
+}
+
+.magicbox .screen
+{
+    border : solid 1px gray;
+    text-align : center;
+    margin : auto;
+    margin-bottom : 4px;
+    overflow : hidden;
+}
+
+.magicbox .footer
+{
+    border : solid 1px gray;
+    margin : 4px auto 0px auto;
+}
+
+.magicbox .thumbContainer
+{
+    position : relative;
+    float : left;
+    border-right : solid 1px gray;
+    overflow : hidden;
+    margin-left : 4px;
+}
+.magicbox .thumbContainer .thumbImage
+{
+    float : left;
+    border : solid 1px silver;
+    cursor : pointer;
+    text-align : center;
+}
+.magicbox .thumbContainer .current
+{
+    border : solid 2px yellow;
+}
+
+.magicbox .toolBox
+{
+    float : right;
+}
+.magicbox .toolBox .btnPrevImage
+{
+    float : left;
+    background-image : url("../images/magicboxBtnPrevImage.png");
+    background-position : center;
+    background-repeat : no-repeat;
+    cursor : pointer;
+}
+.magicbox .toolBox .btnNextImage
+{
+    float : left;
+    background-image : url('../images/magicboxBtnNextImage.png');
+    background-position : center;
+    background-repeat : no-repeat;
+    cursor : pointer;
+}
+.magicbox .toolBox .btnFullScreen
+{
+    float : left;
+    background-image : url("../images/magicboxBtnFullScreen.png");
+    background-position : center;
+    background-repeat : no-repeat;
+    cursor : pointer;
+}
+.magicbox .toolBox .btnQuitFullScreen
+{
+    float : left;
+    background-image : url("../images/magicboxBtnEscFullScreen.png");
+    background-position : center;
+    background-repeat : no-repeat;
+    cursor : pointer;
+}
+
+.magicbox .statusBar
+{
+    text-align : center;
+    margin : auto;
+    color : silver;
+    font-size : 12px;
+    padding : 2px;
+}
+
+.magicbox .loadingBox
+{
+    background-image : url("../images/magicboxLoading.gif");
+    background-position : center;
+    background-repeat : no-repeat;
+    color : silver;
+    font-size : 12px;
+}
+
+.fullScreen
+{
+    background : black;    
+}

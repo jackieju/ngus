@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd" > -->
+<struts-config>
+ <form-beans>
+  <form-bean name="AddBookMarkForm" type="com.ngus.myweb.form.AddBookMarkForm" />
+  <form-bean name="VoteForm" type="com.ngus.myweb.form.VoteForm" />
+  <form-bean name="AddFriendForm" type="com.ngus.myweb.form.AddFriendForm" />
+  <form-bean name="DeleteFriendForm" type="com.ngus.myweb.form.DeleteFriendForm" />
+  <form-bean name="AddFolderForm" type="com.ngus.myweb.form.AddFolderForm"/>
+  <form-bean name="EditBookMarkForm" type="com.ngus.myweb.form.EditBookMarkForm"/>
+  <form-bean name="EditFolderForm" type="com.ngus.myweb.form.EditFolderForm"/>
+  <form-bean name="DeleteForm" type="com.ngus.myweb.form.DeleteForm"/>
+  <form-bean name="PostMsgForm" type="com.ngus.myweb.form.PostMsgForm"/>
+  <form-bean name="SearchTextForm" type="com.ngus.myweb.form.SearchTextForm"/>
+  <form-bean name="PageForm" type="com.ngus.myweb.form.PageForm"/>
+  <form-bean name="userRegForm" type="com.ngus.myweb.form.UserRegForm"/>
+  <form-bean name="changePassword" type="com.ngus.myweb.form.ChangePasswordForm"/>
+  <form-bean name="login" type="com.ngus.myweb.form.LoginForm"/>
+  <form-bean name="forget" type="com.ngus.myweb.form.ForgetPasswordForm"/>
+  <form-bean name="changeinfo" type="com.ngus.myweb.form.ChangeInfoForm"/>
+ </form-beans>
+ <global-forwards>
+
+ </global-forwards>
+ <action-mappings>
+  <action path="/vote" type="com.ngus.myweb.action.VoteAction" name="VoteForm" scope="request" input="/ViewVote">
+  <forward name="listView" path="ViewVote"/>
+  </action>
+  <action path="/addFriend" type="com.ngus.myweb.action.AddFriendAction" name="AddFriendForm" scope="request" input="/addFriend.jsp">
+  <forward name="listfriend" path="/monweb_friend.jsp"/>
+  <forward name="fail" path="/monweb_addFriend.jsp"/>
+  </action>
+  <action path="/deleteFriend" type="com.ngus.myweb.action.DeleteFriendAction" name="DeleteFriendForm" scope="request" input="/deleteFriend.jsp">
+  <forward name="listfriend" path="/monweb_friend.jsp"/>
+  </action>
+  <action path="/addBookMark" type="com.ngus.myweb.action.AddBookMarkAction" name="AddBookMarkForm" scope="request" input="/addbookmark.jsp">
+  <forward name="listbookmark" path="/loadbookmark.jsp"/>
+  </action>
+  <action path="/webosAddBookmark" type="com.ngus.myweb.action.widget.AddBookmarkAction" name="AddBookMarkForm" scope="request" input="/loadbookmark.jsp">
+  <forward name="listbookmark" path="/loadbookmark.jsp"/>
+  </action> 
+  <action path="/addFolder" type="com.ngus.myweb.action.AddFolderAction" name="AddFolderForm" scope="request" input="/addfolder.jsp" >
+  <forward name="listbookmark" path="/loadbookmark.jsp"/>
+  </action>
+  <action path="/webosAddFolder" type="com.ngus.myweb.action.AddFolderAction" name="AddFolderForm" scope="request" input="/loadbookmark.jsp" >
+  <forward name="listbookmark" path="/loadbookmark.jsp"/>
+  </action>
+  <action path="/editBookMark" type="com.ngus.myweb.action.EditBookMarkAction" name="EditBookMarkForm" scope="request" input="/loadbookmark.jsp">
+  <forward name="listbookmark" path="/loadbookmark.jsp"/>
+  </action>
+  <action path="/webosEditBookMark" type="com.ngus.myweb.action.EditBookMarkAction" name="EditBookMarkForm" scope="request" input="/editbookmark.jsp">
+  <forward name="listbookmark" path="/loadbookmark.jsp"/>
+  </action>
+  <action path="/editFolder" type="com.ngus.myweb.action.EditFolderAction" name="EditFolderForm" scope="request" input="/editFolder.jsp">
+  <forward name="list" path="/main.jsp"/>
+  </action>
+  <action path="/delete" type="com.ngus.myweb.action.DeleteAction" name="DeleteForm" scope="request" input="/index.htm">
+  <forward name="listbookmark" path="/loadbookmark.jsp"/>
+  </action>
+  <action path="/webosDelete" type="com.ngus.myweb.action.DeleteAction" name="DeleteForm" scope="request" input="/loadbookmark.jsp">
+  <forward name="listbookmark" path="/loadbookmark.jsp"/>
+  </action>
+  <action path="/webosDelete" type="com.ngus.myweb.action.widget.DeleteAction" name="DeleteForm" scope="request" input="/loadbookmark.jsp">
+  <forward name="listbookmark" path="/loadbookmark.jsp"/>
+  </action>
+  <action path="/postMsg" type="com.ngus.myweb.action.PostMsgAction" name="PostMsgForm" scope="request" input="/postMsg.jsp"> 
+  <forward name="list" path="/monweb_message.jsp"/>
+  <forward name="fail" path="/log_error.jsp"/>
+  </action>
+  <action path="/searchText" type="com.ngus.myweb.action.SearchText" name="SearchTextForm" scope="request" input="/searchList.jsp">
+  <forward name="list" path="/searchList.jsp"/>
+  </action>
+   <action path="/receivePage" type="com.ngus.myweb.action.ReceivePageAction" name="PageForm" scope="request" input="/listReceiveMsg.jsp">
+  <forward name="list" path="/listReceiveMsg.jsp"/>
+  </action>
+  <action path="/userReg" type="com.ngus.myweb.action.UserRegAction" name="userRegForm" scope="request" input="reg.jsp">
+  <forward name="success" path="/reg_ok.jsp"/>
+  <forward name="fail" path="/monweb_reg.jsp"/>
+  </action>
+  <action path="/change" type="com.ngus.myweb.action.ChangePasswordAction" name="changePassword" scope="request" input="changePassword2.jsp">
+  	<forward name="fail" path="/log_error.jsp"/>
+  	<forward name="success" path="/main.jsp"/>
+  </action>
+  <action path="/login_in" type="com.ngus.myweb.action.LoginAction" name="login" scope="request" input="mainTest.jsp">
+	  <forward name="success" path="/load.jsp"/>
+	  <forward name="fail" path="/monweb_login.jsp"/>
+  </action>
+  <action path="/forgetPassword" type="com.ngus.myweb.action.ForgetPasswordAction" name="forget" scope="request" input="forgetPassword2.jsp">
+	  <forward name="success" path="/sendEmailSuccess.jsp"/>
+	  <forward name="fail" path="/log_error.jsp"/>
+  </action>
+   <action path="/changeInfo" type="com.ngus.myweb.action.ChangeInfoAction" name="changeinfo" scope="request" input="changeInfo2.jsp">
+	  <forward name="success" path="/monweb_viewinfo.jsp"/>
+	  <forward name="fail" path="/monweb_personalResource.jsp"/>
+  </action>
+  <action path="/webos_changeInfo" type="com.ngus.myweb.action.WebOSChangeInfoAction" name="changeinfo" scope="request" input="changeInfo2.jsp">
+	  <forward name="success" path="/webos_viewInfo.jsp"/>
+	  <forward name="fail" path="/webos_personalResource.jsp"/>
+  </action>
+  <action path="/reply" type="com.ngus.myweb.action.ReplyAction" scope="request" input="listReceiveMsg.jsp">
+	  <forward name="success" path="/monweb_message.jsp"/>
+  </action>
+ </action-mappings> 
+ 	
+ <message-resources parameter="ApplicationResources"/>
+
+</struts-config>

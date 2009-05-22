@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<META name="GENERATOR" content="IBM WebSphere Studio">
+<TITLE>UMLogon JSP Sample</TITLE>
+<style>
+	body,table,p,td{font-family:verdana;font-size:9pt;}
+</style>
+</HEAD>
+<BODY>
+<p>
+</p>
+<h3>用户重置密码</h3>
+<form name=f1 method=post action="ResetPwd.jsp">
+	用户名:<input type="text" name="strUserName"><br>
+	<!-- 用户类型: --><input type=hidden name="strUserType" value="none"><br>
+	用户安全问题:<select name="QuestionId">
+	<option value="1" >身份证号码</option>
+	</select><br>
+	用户安全问题答案:<input type="text" name="strSecurityAnswer"><!--<a href="UM_AF_GetSecurityQuestionList.jsp">取得安全问题列表</a><br>-->
+	<br>
+	需要重置的密码:
+	<input type=radio name="btResetType" checked value="1">字符密码
+	<input type=radio name="btResetType" value="2">数字密码<br>
+	<input type="submit" name="action" value="UM_UF_ResetPasswd">
+</form>
+</BODY>
+</HTML>

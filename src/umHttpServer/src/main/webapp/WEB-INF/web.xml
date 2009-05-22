@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>
+	myWebServer</display-name>
+	<servlet>
+		<description>
+		</description>
+		<display-name>
+		umHttpHandler</display-name>
+		<servlet-name>umHttpHandler</servlet-name>
+		<servlet-class>
+		com.ngus.umhttp.MyWebServer</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>umHttpHandler</servlet-name>
+		<url-pattern>/umHttpHandler</url-pattern>
+	</servlet-mapping>
+	<listener>
+        <description>NGUS Initializer</description>
+        <display-name>Initializer</display-name>
+        <listener-class>com.ngus.servlet.Initializer</listener-class>
+    </listener>
+    <listener>
+        <description>NGUS UM Initializer</description>
+        <display-name>UMInitializer</display-name>
+        <listener-class>com.ngus.servlet.UMInitializer</listener-class>
+    </listener>
+  	
+    
+
+	<context-param>
+        <param-name>ngus.core.memCached.server</param-name>
+        <param-value>;memcached1:11211;memcached2:11211;</param-value>
+    </context-param>
+    <context-param>
+        <param-name>mail.smtp.host</param-name>
+        <param-value>umserver</param-value>
+    </context-param>
+    <context-param>
+        <param-name>ngus.um.port</param-name>
+        <param-value>17291</param-value>
+    </context-param>
+    <context-param>
+        <param-name>ngus.log.file</param-name>
+        <param-value>ngus_umHttpServer.log</param-value>
+    </context-param>
+     <context-param>
+        <param-name>mail.smtp.port</param-name>
+        <param-value>25</param-value>
+    </context-param>
+    <context-param>
+        <param-name>mail.smtp.username</param-name>
+        <param-value></param-value>
+    </context-param>
+    <context-param>
+        <param-name>mail.smtp.password</param-name>
+        <param-value></param-value>
+    </context-param>
+    ngus.core.memCached.server
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

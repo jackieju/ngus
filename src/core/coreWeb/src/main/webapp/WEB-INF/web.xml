@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>
+	testWeb</display-name>
+	<servlet>
+		<description>
+		</description>
+		<display-name>
+		clipboard</display-name>
+		<servlet-name>clipboard</servlet-name>
+		<servlet-class>
+		com.ngus.web.ClipboardServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>clipboard</servlet-name>
+		<url-pattern>/clipboard</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description>
+		</description>
+		<display-name>
+		jena</display-name>
+		<servlet-name>jena</servlet-name>
+		<servlet-class>
+		com.ngus.web.JenaServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>
+		Apache-Axis Servlet</display-name>
+		<servlet-name>AxisServlet</servlet-name>
+		<servlet-class>
+		org.apache.axis.transport.http.AxisServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>
+		Axis Admin Servlet</display-name>
+		<servlet-name>AdminServlet</servlet-name>
+		<servlet-class>
+		org.apache.axis.transport.http.AdminServlet</servlet-class>
+		<load-on-startup>100</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>jena</servlet-name>
+		<url-pattern>/jena</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AxisServlet</servlet-name>
+		<url-pattern>/servlet/AxisServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AxisServlet</servlet-name>
+		<url-pattern>*.jws</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AxisServlet</servlet-name>
+		<url-pattern>/services/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AdminServlet</servlet-name>
+		<url-pattern>/servlet/AdminServlet</url-pattern>
+	</servlet-mapping>
+	<!--
+	<listener>
+        <description>NGUS Property Initializer</description>
+        <display-name>propertyInitializer</display-name>
+        <listener-class>com.ngus.servlet.PropertyInitializer</listener-class>
+    </listener>
+    -->
+<listener>
+        <description>NGUS Initializer</description>
+        <display-name>Initializer</display-name>
+        <listener-class>com.ngus.servlet.Initializer</listener-class>
+    </listener>
+    <!-- 
+    <listener>
+        <description>NGUS UM Initializer</description>
+        <display-name>UMInitializer</display-name>
+        <listener-class>com.ngus.servlet.UMInitializer</listener-class>
+    </listener>
+    -->
+    <listener>
+        <description>NGUS session listener</description>
+        <display-name>SessionListener</display-name>
+        <listener-class>com.ngus.servlet.SessionListener</listener-class>
+    </listener>
+    <!--
+       <listener>
+        <description>Mail Initializer</description>
+        <display-name>MailInitializer</display-name>
+        <listener-class>com.ngus.servlet.MailInitializer</listener-class>
+    </listener> 
+    -->
+    <context-param>
+        <param-name>ngus.initialization.file</param-name>
+        <param-value>WEB-INF/config/${servername}/${webapp}/ngus.properties,
+            WEB-INF/config/${servername}/ngus.properties,
+            WEB-INF/config/${webapp}/ngus.properties, WEB-INF/config/default/ngus.properties,
+            WEB-INF/config/ngus.properties
+        </param-value>
+    </context-param>
+     <context-param>
+        <param-name>ngus.core.memCached.server</param-name>
+        <param-value>;192.168.1.162:11211;192.168.1.141:11211;</param-value>
+    </context-param>
+    <context-param>
+        <param-name>mail.smtp.host</param-name>
+        <param-value>umserver</param-value>
+    </context-param>
+    <context-param>
+        <param-name>ngus.um.port</param-name>
+        <param-value>17291</param-value>
+    </context-param>
+    <context-param>
+        <param-name>ngus.log.file</param-name>
+        <param-value>ngus_coreWeb.log</param-value>
+    </context-param>
+     <context-param>
+        <param-name>mail.smtp.port</param-name>
+        <param-value>25</param-value>
+    </context-param>
+    <context-param>
+        <param-name>mail.smtp.username</param-name>
+        <param-value></param-value>
+    </context-param>
+    <context-param>
+        <param-name>mail.smtp.password</param-name>
+        <param-value></param-value>
+    </context-param>
+	<welcome-file-list>
+		<welcome-file>main.jsp</welcome-file>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>		
+	</welcome-file-list>
+	
+	
+  <resource-env-ref>
+	<description>Content Repository</description>
+	<resource-env-ref-name>jcr/repository</resource-env-ref-name>
+	<resource-env-ref-type>javax.jcr.Repository</resource-env-ref-type>
+  </resource-env-ref>
+  
+  	<resource-ref>
+	     <description>DB Connection</description>
+	     <res-ref-name>jdbc/ngus</res-ref-name>
+	     <res-type>javax.sql.DataSource</res-type>
+	     <res-auth>Container</res-auth>
+ 	</resource-ref>
+</web-app>

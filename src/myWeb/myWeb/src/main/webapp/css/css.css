@@ -1,0 +1,161 @@
+/* CSS Document */
+body{
+	font-family: san-serif;
+	font-size:10pt;
+}
+#tree{
+	padding: 0px;
+	margin: 0px;
+	width: 150px;
+	border: 0px;/* solid gray;*/
+	height: 600px;
+	overflow: auto;
+	white-space: nowrap;
+}
+#tree ul{
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
+	padding-left: 20px;
+}
+#tree li{
+	padding-top: 5px;
+	list-style: none;
+	line-height: normal;
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+/*.folder_close_not last_mouseout
+.1000*/
+#tree .style8{
+	background-image: url(../img/tree/tp.gif);/* no-repeat left top;*/
+}
+/*.folder_close_not last_mouseover
+.1001*/
+#tree .style9{
+	background-image: url(../img/tree/tph.gif);/* no-repeat left top;*/
+}
+/*.folder_open_not last_mouseout
+.1100*/
+#tree .style12{
+	background-image: url(../img/tree/tm.gif); /*no-repeat left top;*/
+}
+/*.folder_open_not last_mouseover
+.1101*/
+#tree .style13{
+	background-image: url(../img/tree/tmh.gif); /*no-repeat left top;*/
+}
+/*.folder_close_last_mouseout
+.1010*/
+#tree .style10{
+	background-image: url(../img/tree/lp.gif);/* no-repeat left top;*/
+}
+/*.folder_close_last_mouseover
+.1011*/
+#tree .style11{
+	background-image: url(../img/tree/lph.gif);/* no-repeat left top;*/
+}
+/*.folder_open_last_mouseout
+.1110*/
+#tree .style14{
+	background-image: url(../img/tree/lm.gif);/* no-repeat left top;*/
+}
+/*.folder_open_last_mouseover
+.1111*/
+#tree .style15{
+	background-image: url(../img/tree/lmh.gif);/* no-repeat left top;*/
+}
+/*.bookmark_close_notlast_mouseout
+.0000*/
+#tree .style0{
+	background-image: url(../img/tree/tn.gif);/* no-repeat left top;*/
+}
+/*.bookmark_close_notlast_mouseover
+.0001*/
+#tree .style1{
+	background-image: url(../img/tree/tn.gif);
+}
+/*.bookmark_close_last_mouseout
+.0010*/
+#tree .style2{
+	background-image: url(../img/tree/ln.gif);/* no-repeat left top;*/
+}
+/*.bookmark_close_last_mouseout
+.0011*/
+#tree .style3{
+	background-image: url(../img/tree/ln.gif);
+}
+#tree .content{
+	cursor: pointer;	
+	padding-left: 40px;	
+	display: inline-block;	
+	/*background-color: #D7EDF4;*/
+}
+#tree .selected{
+	background-color: blue;
+	color: white;
+	border: 1px dashed gray;
+}
+#tree a:link{
+	text-decoration: none;
+	color: black;
+}
+#tree a:hover{
+	text-decoration: underline;
+	background: blue;
+	color: white;
+	border: 1px dashed gray;
+}
+#bk_form_tags .selected{
+	background: blue;
+	color: white;
+	cursor: pointer;
+}
+#bk_form_tags .unselected{
+	background: white;
+	color: black;
+}
+
+/* Menu Start 
+还有一些小问题,padding margin ie下面不正常 li之间宽度过长...
+fixed.....
+*/
+#contextMenu{
+	position: absolute;	
+	padding: 1px;
+	margin: 0px;
+	list-style: none;
+	width: 120px;;
+	border: 1px solid #202867;
+	background: #FFFFFF url(../img/contextmenu/gradient.gif) repeat-y left top;
+}
+#contextMenu li{
+	height: 20px;
+	padding:1px;
+	cursor:pointer;
+	vertical-align: bottom; /* This fixes the IE5 Win gap! */
+	/*clear:both;	*/
+}
+#contextMenu .menuHighLighted{
+	border:1px solid #000;
+	padding:0px;
+	background-color:#E2EBED;
+	z-index: 5;	
+}
+#contextMenu .imgbox{
+	position: absolute;
+	width: 23px;
+}
+#contextMenu .text{
+	position: absolute;
+	padding-left: 26px;	
+	padding-top: 3px;
+}
+/*Menu End*/
+.split_bar{
+	float: left;
+	width: 2px;
+	height: 600px;
+	cursor: w-resize;
+}

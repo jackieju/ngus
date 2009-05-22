@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<urlPatterns>
+	<resType name="video">
+		<pattern type="regExp"></pattern>
+		<pattern type="startWith"></pattern>
+		<pattern type="endWith"></pattern>
+		<pattern type="contain">youtube.com/watch?</pattern>
+		<pattern type="contain">dv.ouou.com/play/v</pattern>
+		<pattern type="contain">.6rooms.com/watch/</pattern>
+		<pattern type="contain">.6rooms.com/plist/</pattern>
+		
+	</resType>
+</urlPatterns>
+

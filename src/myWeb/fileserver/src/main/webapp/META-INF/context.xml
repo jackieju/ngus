@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Context
+    crossContext="true"
+    reloadable="true"  
+            path="/fileServer" >
+         <!--     
+  <ResourceLink
+    global="jcr/globalRepository"
+    name="jcr/repository"
+    type="javax.jcr.Repository"
+    reloadable="true"/>
+
+ 
+  <ResourceLink
+    global="jdbc/ngus"
+    name="jdbc/ngus"
+    type="javax.sql.DataSource"
+    reloadable="true"/>
+      -->
+      <Resource
+      auth="Container"
+      name="jdbc/ngus"
+      type="javax.sql.DataSource"
+      password="Ft05ab"
+      driverClassName="com.mysql.jdbc.Driver"
+      maxIdle="100"
+      maxWait="5000"
+      username="root"
+      url="jdbc:mysql://dbserver/test?characterEncoding=utf8"
+           maxActive="120"
+      removeAbandoned="true" 
+      removeAbandonedTimeout="6000" 
+      logAbandoned="true" />
+       
+  
+      <Resource
+      auth="Container"
+      name="jcr/repository"
+      type="javax.jcr.Repository"
+      url="//jcrserver:1099/jackrabbit.repository"
+      factory="org.apache.jackrabbit.rmi.client.ClientRepositoryFactory"/>
+  
+      
+   <!-- <WatchedResource>d:\Program Files\Apache Software Foundation\Tomcat 5.5\conf\context.xml</WatchedResource>     -->
+</Context>
