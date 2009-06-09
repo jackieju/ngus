@@ -254,15 +254,21 @@ public class JCRContentRepository {
 		 */
 		Log.log("load repository home dir: ");
 		try {
+			Log.trace("init context");
 			InitialContext initCtx = new InitialContext();
+			Log.trace("lookup java:comp/env");
 			Context ctx = (Context) initCtx.lookup("java:comp/env");
+			Log.trace("lookup jcr/repository");
 			repo = (Repository) ctx.lookup("jcr/repository");
 			if (repo == null)
 				throw new Exception("can not lookup repository");
 
+			Log.trace("get session");
 			Session session = getSession(null);
+			Log.trace("get workspace");
 			Workspace ws = session.getWorkspace();
 			registerNamespace(NAMESPACE_PREFIX, NAMESPACE_URI, ws);
+			Log.trace("release session");
 			this.releaseSession(session, null);
 		} catch (Exception e) {
 			Log.error(e);
