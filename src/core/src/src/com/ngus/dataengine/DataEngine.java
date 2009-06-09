@@ -1255,7 +1255,8 @@ public class DataEngine implements IDataEngine {
 		Log.trace("model name = " + modelName);
 
 		// open model
-		model = RDFEngine.openModule(modelName, true);		
+		model = RDFEngine.openModule(modelName, true);	
+		Log.trace("model opend for rdf.");
 		((ModelRDB)model).getConnection().getConnection().setAutoCommit(false);
 		model.begin();
 
