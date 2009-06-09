@@ -36,14 +36,17 @@ public class RDFEngine {
 	public DBConnection getDbc() throws Exception {
 		// return dbc;
 		DBConnection dbc = null;
+		Connection c = null;
 
 		try {
 
-			Connection c = com.ns.db.DBC.getDataSource(
-			"java:comp/env/jdbc/rdf").getConnection();
+//			Log.trace("get db connection from data source java:comp/env/jdbc/rdf");
+//			Connection c = com.ns.db.DBC.getDataSource(
+//			"java:comp/env/jdbc/rdf").getConnection();
 			
-			dbc = new DBConnection(c, SystemProperty  
-					.getProperty("ngus.jdbc.dbType"));			
+//			Log.trace("c:"+c);
+//			dbc = new DBConnection(c, SystemProperty  
+//					.getProperty("ngus.jdbc.dbType"));			
 
 			if (dbc == null) {
 				Log
@@ -186,8 +189,9 @@ public class RDFEngine {
 			return model;
 
 		// model not in pool, open it from db
+		Log.trace("model not in pool, open it from db");
 		DBConnection dbc = RDFEngine.instance().getDbc();
-		
+		Log.trace("dbc:" +dbc);
 		try {
 
 			if (modelName != null) {
